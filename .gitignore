@@ -24,4 +24,4 @@ pp*.tcb
 
 .status
 .history
-.gexec.cmd
+gexec.cmd
