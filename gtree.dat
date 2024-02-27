@@ -1,5 +1,5 @@
 # Copyright (C) 1994-2011 Synopsys Inc.
-# swbtree vcurrent, Tue Feb 27 06:05:41 2024
+# swbtree vcurrent, Tue Feb 27 07:57:51 2024
 
 # --- simulation flow
 sde sde "" {}
@@ -19,6 +19,7 @@ sdevice_alpha endBias "350" {200}
 sdevice_alpha alpha_direction "bot" {top}
 sdevice_mip sdevice "" {}
 sdevice_mip track_length "1" {1}
+sdevice_mip direction "top" {top}
 sdevice_mip y_loc "5" {5 10 20 30 40 45}
 sdevice_mip LET "1.28E-5" {8.9E-4}
 svisual svisual "" {}
@@ -38,6 +39,7 @@ scenario default startBias ""
 scenario default endBias ""
 scenario default alpha_direction ""
 scenario default track_length ""
+scenario default direction ""
 scenario default y_loc ""
 scenario default LET ""
 scenario default variable ""
@@ -58,31 +60,32 @@ scenario default variable ""
 13 7217 7216 {200} {default} 0
 14 7218 7217 {top} {default} 0
 15 7219 7218 {} {default} 0
-16 41193 7219 {1} {default} 0
-17 40387 41193 {5} {default} 0
-18 40741 40387 {8.9E-4} {default} 0
-19 40742 40741 {} {default} 0
-20 40743 40742 {eDensity} {default} 0
-17 40450 41193 {10} {default} 0
-18 40744 40450 {8.9E-4} {default} 0
-19 40745 40744 {} {default} 0
-20 40746 40745 {eDensity} {default} 0
-17 40510 41193 {20} {default} 0
-18 40747 40510 {8.9E-4} {default} 0
-19 40748 40747 {} {default} 0
-20 40749 40748 {eDensity} {default} 0
-17 40570 41193 {30} {default} 0
-18 40750 40570 {8.9E-4} {default} 0
-19 40751 40750 {} {default} 0
-20 40752 40751 {eDensity} {default} 0
-17 40630 41193 {40} {default} 0
-18 40753 40630 {8.9E-4} {default} 0
-19 40754 40753 {} {default} 0
-20 40755 40754 {eDensity} {default} 0
-17 40690 41193 {45} {default} 0
-18 40756 40690 {8.9E-4} {default} 0
-19 40757 40756 {} {default} 0
-20 40758 40757 {eDensity} {default} 0
+16 42025 7219 {1} {default} 0
+17 41193 42025 {top} {default} 0
+18 40387 41193 {5} {default} 0
+19 40741 40387 {8.9E-4} {default} 0
+20 40742 40741 {} {default} 0
+21 40743 40742 {eDensity} {default} 0
+18 40450 41193 {10} {default} 0
+19 40744 40450 {8.9E-4} {default} 0
+20 40745 40744 {} {default} 0
+21 40746 40745 {eDensity} {default} 0
+18 40510 41193 {20} {default} 0
+19 40747 40510 {8.9E-4} {default} 0
+20 40748 40747 {} {default} 0
+21 40749 40748 {eDensity} {default} 0
+18 40570 41193 {30} {default} 0
+19 40750 40570 {8.9E-4} {default} 0
+20 40751 40750 {} {default} 0
+21 40752 40751 {eDensity} {default} 0
+18 40630 41193 {40} {default} 0
+19 40753 40630 {8.9E-4} {default} 0
+20 40754 40753 {} {default} 0
+21 40755 40754 {eDensity} {default} 0
+18 40690 41193 {45} {default} 0
+19 40756 40690 {8.9E-4} {default} 0
+20 40757 40756 {} {default} 0
+21 40758 40757 {eDensity} {default} 0
 3 41925 7204 {0} {default} 0
 4 41929 41925 {} {default} 0
 5 41930 41929 {300} {default} 0
@@ -96,28 +99,29 @@ scenario default variable ""
 13 41938 41937 {200} {default} 0
 14 41939 41938 {top} {default} 0
 15 41940 41939 {} {default} 0
-16 41941 41940 {1} {default} 0
-17 41944 41941 {5} {default} 0
-18 41947 41944 {8.9E-4} {default} 0
-19 41948 41947 {} {default} 0
-20 41949 41948 {eDensity} {default} 0
-17 41959 41941 {10} {default} 0
-18 41962 41959 {8.9E-4} {default} 0
-19 41963 41962 {} {default} 0
-20 41964 41963 {eDensity} {default} 0
-17 41974 41941 {20} {default} 0
-18 41977 41974 {8.9E-4} {default} 0
-19 41978 41977 {} {default} 0
-20 41979 41978 {eDensity} {default} 0
-17 41989 41941 {30} {default} 0
-18 41992 41989 {8.9E-4} {default} 0
-19 41993 41992 {} {default} 0
-20 41994 41993 {eDensity} {default} 0
-17 42004 41941 {40} {default} 0
-18 42007 42004 {8.9E-4} {default} 0
-19 42008 42007 {} {default} 0
-20 42009 42008 {eDensity} {default} 0
-17 42019 41941 {45} {default} 0
-18 42022 42019 {8.9E-4} {default} 0
-19 42023 42022 {} {default} 0
-20 42024 42023 {eDensity} {default} 0
+16 42026 41940 {1} {default} 0
+17 41941 42026 {top} {default} 0
+18 41944 41941 {5} {default} 0
+19 41947 41944 {8.9E-4} {default} 0
+20 41948 41947 {} {default} 0
+21 41949 41948 {eDensity} {default} 0
+18 41959 41941 {10} {default} 0
+19 41962 41959 {8.9E-4} {default} 0
+20 41963 41962 {} {default} 0
+21 41964 41963 {eDensity} {default} 0
+18 41974 41941 {20} {default} 0
+19 41977 41974 {8.9E-4} {default} 0
+20 41978 41977 {} {default} 0
+21 41979 41978 {eDensity} {default} 0
+18 41989 41941 {30} {default} 0
+19 41992 41989 {8.9E-4} {default} 0
+20 41993 41992 {} {default} 0
+21 41994 41993 {eDensity} {default} 0
+18 42004 41941 {40} {default} 0
+19 42007 42004 {8.9E-4} {default} 0
+20 42008 42007 {} {default} 0
+21 42009 42008 {eDensity} {default} 0
+18 42019 41941 {45} {default} 0
+19 42022 42019 {8.9E-4} {default} 0
+20 42023 42022 {} {default} 0
+21 42024 42023 {eDensity} {default} 0
