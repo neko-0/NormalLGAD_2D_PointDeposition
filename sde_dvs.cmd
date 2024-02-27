@@ -386,7 +386,7 @@
 (define nplus_peak_dope 1e19)
 (define nplus_depth 0.15)
 
-(define pplus_offset 12)
+(define pplus_offset 8)
 (define pplus_xmin (+ nplus_xmin pplus_offset))
 (define pplus_xmax (- nplus_xmax pplus_offset))
 (define pplus_peak_loc 1.5)
