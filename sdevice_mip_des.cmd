@@ -65,7 +65,7 @@ Physics(Material="Silicon"){
         #if [ string compare @direction@ "bot" ] == 0
             !(
                 set center [expr @width@/2]
-                puts "StartPoint=($center, @first_y_loc@, 0)"
+                puts "StartPoint=($center, @y_loc@, 0)"
             )!
             Direction=(0, -1)
             Length=@track_length@
@@ -74,7 +74,7 @@ Physics(Material="Silicon"){
         #if [ string compare @direction@ "top" ] == 0
             !(
                 set center [expr @width@/2]
-                puts "StartPoint=($center, @first_y_loc@, 0)"
+                puts "StartPoint=($center, @y_loc@, 0)"
             )!
             Direction=(0, 1)
             Length=@track_length@

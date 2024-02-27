@@ -1,14 +1,11 @@
 # Copyright (C) 1994-2011 Synopsys Inc.
-# swbtree vcurrent, Sat Nov 11 15:37:49 2023
+# swbtree vcurrent, Tue Feb 27 06:05:41 2024
 
 # --- simulation flow
 sde sde "" {}
 sde width "200" {100}
 sde thickness "50" {50}
 sde pplus_dope "2.5e16" {2.6e16 0}
-sde track2_loc "0" {0}
-sde track3_loc "0" {0}
-sde angle "0" {0}
 sdevice sdevice "" {}
 sdevice Temp "300" {300}
 sdevice restore "250" {0}
@@ -19,15 +16,11 @@ sdevice_alpha energy "5.5e6" {5.5e6}
 sdevice_alpha final_t "1e-8" {1e-8}
 sdevice_alpha startBias "150" {200}
 sdevice_alpha endBias "350" {200}
-sdevice_alpha direction "bot" {top}
+sdevice_alpha alpha_direction "bot" {top}
 sdevice_mip sdevice "" {}
 sdevice_mip track_length "1" {1}
-sdevice_mip mip2_xloc "0" {0}
-sdevice_mip mip3_xloc "0" {0}
-sdevice_mip first_y_loc "5" {5 10 20 30 40 45}
-sdevice_mip 2nd_dist "3" {0}
-sdevice_mip 3rd_dist "3" {0}
-sdevice_mip LET "1.28E-5" {8.9E-4 1.335E-3 1.78E-3 2.67E-3}
+sdevice_mip y_loc "5" {5 10 20 30 40 45}
+sdevice_mip LET "1.28E-5" {8.9E-4}
 svisual svisual "" {}
 svisual variable "eDensity" {eDensity}
 # --- variables
@@ -35,9 +28,6 @@ svisual variable "eDensity" {eDensity}
 scenario default width ""
 scenario default thickness ""
 scenario default pplus_dope ""
-scenario default track2_loc ""
-scenario default track3_loc ""
-scenario default angle ""
 scenario default Temp ""
 scenario default restore ""
 scenario default MaxBias ""
@@ -46,13 +36,9 @@ scenario default energy ""
 scenario default final_t ""
 scenario default startBias ""
 scenario default endBias ""
-scenario default direction ""
+scenario default alpha_direction ""
 scenario default track_length ""
-scenario default mip2_xloc ""
-scenario default mip3_xloc ""
-scenario default first_y_loc ""
-scenario default 2nd_dist ""
-scenario default 3rd_dist ""
+scenario default y_loc ""
 scenario default LET ""
 scenario default variable ""
 # --- simulation tree
@@ -60,220 +46,78 @@ scenario default variable ""
 1 5630 1831 {100} {default} 0
 2 7204 5630 {50} {default} 0
 3 7205 7204 {2.6e16} {default} 0
-4 7206 7205 {0} {default} 0
-5 7207 7206 {0} {default} 0
-6 7208 7207 {0} {default} 0
-7 7209 7208 {} {default} 0
-8 15312 7209 {300} {default} 0
-9 7210 15312 {0} {default} 0
-10 7211 7210 {500} {default} 0
-11 7212 7211 {200} {default} 0
-12 7213 7212 {} {default} 0
-13 7214 7213 {5.5e6} {default} 0
-14 7215 7214 {1e-8} {default} 0
-15 7216 7215 {200} {default} 0
-16 7217 7216 {200} {default} 0
-17 7218 7217 {top} {default} 0
-18 7219 7218 {} {default} 0
-19 41193 7219 {1} {default} 0
-20 41194 41193 {0} {default} 0
-21 40386 41194 {0} {default} 0
-22 40387 40386 {5} {default} 0
-23 40388 40387 {0} {default} 0
-24 40389 40388 {0} {default} 0
-25 40741 40389 {8.9E-4} {default} 0
-26 40742 40741 {} {default} 0
-27 40743 40742 {eDensity} {default} 0
-25 40759 40389 {1.335E-3} {default} 0
-26 40760 40759 {} {default} 0
-27 40761 40760 {eDensity} {default} 0
-25 40777 40389 {1.78E-3} {default} 0
-26 40778 40777 {} {default} 0
-27 40779 40778 {eDensity} {default} 0
-25 40795 40389 {2.67E-3} {default} 0
-26 40796 40795 {} {default} 0
-27 40797 40796 {eDensity} {default} 0
-22 40450 40386 {10} {default} 0
-23 40451 40450 {0} {default} 0
-24 40452 40451 {0} {default} 0
-25 40744 40452 {8.9E-4} {default} 0
-26 40745 40744 {} {default} 0
-27 40746 40745 {eDensity} {default} 0
-25 40762 40452 {1.335E-3} {default} 0
-26 40763 40762 {} {default} 0
-27 40764 40763 {eDensity} {default} 0
-25 40780 40452 {1.78E-3} {default} 0
-26 40781 40780 {} {default} 0
-27 40782 40781 {eDensity} {default} 0
-25 40798 40452 {2.67E-3} {default} 0
-26 40799 40798 {} {default} 0
-27 40800 40799 {eDensity} {default} 0
-22 40510 40386 {20} {default} 0
-23 40511 40510 {0} {default} 0
-24 40512 40511 {0} {default} 0
-25 40747 40512 {8.9E-4} {default} 0
-26 40748 40747 {} {default} 0
-27 40749 40748 {eDensity} {default} 0
-25 40765 40512 {1.335E-3} {default} 0
-26 40766 40765 {} {default} 0
-27 40767 40766 {eDensity} {default} 0
-25 40783 40512 {1.78E-3} {default} 0
-26 40784 40783 {} {default} 0
-27 40785 40784 {eDensity} {default} 0
-25 40801 40512 {2.67E-3} {default} 0
-26 40802 40801 {} {default} 0
-27 40803 40802 {eDensity} {default} 0
-22 40570 40386 {30} {default} 0
-23 40571 40570 {0} {default} 0
-24 40572 40571 {0} {default} 0
-25 40750 40572 {8.9E-4} {default} 0
-26 40751 40750 {} {default} 0
-27 40752 40751 {eDensity} {default} 0
-25 40768 40572 {1.335E-3} {default} 0
-26 40769 40768 {} {default} 0
-27 40770 40769 {eDensity} {default} 0
-25 40786 40572 {1.78E-3} {default} 0
-26 40787 40786 {} {default} 0
-27 40788 40787 {eDensity} {default} 0
-25 40804 40572 {2.67E-3} {default} 0
-26 40805 40804 {} {default} 0
-27 40806 40805 {eDensity} {default} 0
-22 40630 40386 {40} {default} 0
-23 40631 40630 {0} {default} 0
-24 40632 40631 {0} {default} 0
-25 40753 40632 {8.9E-4} {default} 0
-26 40754 40753 {} {default} 0
-27 40755 40754 {eDensity} {default} 0
-25 40771 40632 {1.335E-3} {default} 0
-26 40772 40771 {} {default} 0
-27 40773 40772 {eDensity} {default} 0
-25 40789 40632 {1.78E-3} {default} 0
-26 40790 40789 {} {default} 0
-27 40791 40790 {eDensity} {default} 0
-25 40807 40632 {2.67E-3} {default} 0
-26 40808 40807 {} {default} 0
-27 40809 40808 {eDensity} {default} 0
-22 40690 40386 {45} {default} 0
-23 40691 40690 {0} {default} 0
-24 40692 40691 {0} {default} 0
-25 40756 40692 {8.9E-4} {default} 0
-26 40757 40756 {} {default} 0
-27 40758 40757 {eDensity} {default} 0
-25 40774 40692 {1.335E-3} {default} 0
-26 40775 40774 {} {default} 0
-27 40776 40775 {eDensity} {default} 0
-25 40792 40692 {1.78E-3} {default} 0
-26 40793 40792 {} {default} 0
-27 40794 40793 {eDensity} {default} 0
-25 40810 40692 {2.67E-3} {default} 0
-26 40811 40810 {} {default} 0
-27 40812 40811 {eDensity} {default} 0
+4 7209 7205 {} {default} 0
+5 15312 7209 {300} {default} 0
+6 7210 15312 {0} {default} 0
+7 7211 7210 {500} {default} 0
+8 7212 7211 {200} {default} 0
+9 7213 7212 {} {default} 0
+10 7214 7213 {5.5e6} {default} 0
+11 7215 7214 {1e-8} {default} 0
+12 7216 7215 {200} {default} 0
+13 7217 7216 {200} {default} 0
+14 7218 7217 {top} {default} 0
+15 7219 7218 {} {default} 0
+16 41193 7219 {1} {default} 0
+17 40387 41193 {5} {default} 0
+18 40741 40387 {8.9E-4} {default} 0
+19 40742 40741 {} {default} 0
+20 40743 40742 {eDensity} {default} 0
+17 40450 41193 {10} {default} 0
+18 40744 40450 {8.9E-4} {default} 0
+19 40745 40744 {} {default} 0
+20 40746 40745 {eDensity} {default} 0
+17 40510 41193 {20} {default} 0
+18 40747 40510 {8.9E-4} {default} 0
+19 40748 40747 {} {default} 0
+20 40749 40748 {eDensity} {default} 0
+17 40570 41193 {30} {default} 0
+18 40750 40570 {8.9E-4} {default} 0
+19 40751 40750 {} {default} 0
+20 40752 40751 {eDensity} {default} 0
+17 40630 41193 {40} {default} 0
+18 40753 40630 {8.9E-4} {default} 0
+19 40754 40753 {} {default} 0
+20 40755 40754 {eDensity} {default} 0
+17 40690 41193 {45} {default} 0
+18 40756 40690 {8.9E-4} {default} 0
+19 40757 40756 {} {default} 0
+20 40758 40757 {eDensity} {default} 0
 3 41925 7204 {0} {default} 0
-4 41926 41925 {0} {default} 0
-5 41927 41926 {0} {default} 0
-6 41928 41927 {0} {default} 0
-7 41929 41928 {} {default} 0
-8 41930 41929 {300} {default} 0
-9 41931 41930 {0} {default} 0
-10 41932 41931 {200} {default} 0
-11 41933 41932 {200} {default} 0
-12 41934 41933 {} {default} 0
-13 41935 41934 {5.5e6} {default} 0
-14 41936 41935 {1e-8} {default} 0
-15 41937 41936 {200} {default} 0
-16 41938 41937 {200} {default} 0
-17 41939 41938 {top} {default} 0
-18 41940 41939 {} {default} 0
-19 41941 41940 {1} {default} 0
-20 41942 41941 {0} {default} 0
-21 41943 41942 {0} {default} 0
-22 41944 41943 {5} {default} 0
-23 41945 41944 {0} {default} 0
-24 41946 41945 {0} {default} 0
-25 41947 41946 {8.9E-4} {default} 0
-26 41948 41947 {} {default} 0
-27 41949 41948 {eDensity} {default} 0
-25 41950 41946 {1.335E-3} {default} 0
-26 41951 41950 {} {default} 0
-27 41952 41951 {eDensity} {default} 0
-25 41953 41946 {1.78E-3} {default} 0
-26 41954 41953 {} {default} 0
-27 41955 41954 {eDensity} {default} 0
-25 41956 41946 {2.67E-3} {default} 0
-26 41957 41956 {} {default} 0
-27 41958 41957 {eDensity} {default} 0
-22 41959 41943 {10} {default} 0
-23 41960 41959 {0} {default} 0
-24 41961 41960 {0} {default} 0
-25 41962 41961 {8.9E-4} {default} 0
-26 41963 41962 {} {default} 0
-27 41964 41963 {eDensity} {default} 0
-25 41965 41961 {1.335E-3} {default} 0
-26 41966 41965 {} {default} 0
-27 41967 41966 {eDensity} {default} 0
-25 41968 41961 {1.78E-3} {default} 0
-26 41969 41968 {} {default} 0
-27 41970 41969 {eDensity} {default} 0
-25 41971 41961 {2.67E-3} {default} 0
-26 41972 41971 {} {default} 0
-27 41973 41972 {eDensity} {default} 0
-22 41974 41943 {20} {default} 0
-23 41975 41974 {0} {default} 0
-24 41976 41975 {0} {default} 0
-25 41977 41976 {8.9E-4} {default} 0
-26 41978 41977 {} {default} 0
-27 41979 41978 {eDensity} {default} 0
-25 41980 41976 {1.335E-3} {default} 0
-26 41981 41980 {} {default} 0
-27 41982 41981 {eDensity} {default} 0
-25 41983 41976 {1.78E-3} {default} 0
-26 41984 41983 {} {default} 0
-27 41985 41984 {eDensity} {default} 0
-25 41986 41976 {2.67E-3} {default} 0
-26 41987 41986 {} {default} 0
-27 41988 41987 {eDensity} {default} 0
-22 41989 41943 {30} {default} 0
-23 41990 41989 {0} {default} 0
-24 41991 41990 {0} {default} 0
-25 41992 41991 {8.9E-4} {default} 0
-26 41993 41992 {} {default} 0
-27 41994 41993 {eDensity} {default} 0
-25 41995 41991 {1.335E-3} {default} 0
-26 41996 41995 {} {default} 0
-27 41997 41996 {eDensity} {default} 0
-25 41998 41991 {1.78E-3} {default} 0
-26 41999 41998 {} {default} 0
-27 42000 41999 {eDensity} {default} 0
-25 42001 41991 {2.67E-3} {default} 0
-26 42002 42001 {} {default} 0
-27 42003 42002 {eDensity} {default} 0
-22 42004 41943 {40} {default} 0
-23 42005 42004 {0} {default} 0
-24 42006 42005 {0} {default} 0
-25 42007 42006 {8.9E-4} {default} 0
-26 42008 42007 {} {default} 0
-27 42009 42008 {eDensity} {default} 0
-25 42010 42006 {1.335E-3} {default} 0
-26 42011 42010 {} {default} 0
-27 42012 42011 {eDensity} {default} 0
-25 42013 42006 {1.78E-3} {default} 0
-26 42014 42013 {} {default} 0
-27 42015 42014 {eDensity} {default} 0
-25 42016 42006 {2.67E-3} {default} 0
-26 42017 42016 {} {default} 0
-27 42018 42017 {eDensity} {default} 0
-22 42019 41943 {45} {default} 0
-23 42020 42019 {0} {default} 0
-24 42021 42020 {0} {default} 0
-25 42022 42021 {8.9E-4} {default} 0
-26 42023 42022 {} {default} 0
-27 42024 42023 {eDensity} {default} 0
-25 42025 42021 {1.335E-3} {default} 0
-26 42026 42025 {} {default} 0
-27 42027 42026 {eDensity} {default} 0
-25 42028 42021 {1.78E-3} {default} 0
-26 42029 42028 {} {default} 0
-27 42030 42029 {eDensity} {default} 0
-25 42031 42021 {2.67E-3} {default} 0
-26 42032 42031 {} {default} 0
-27 42033 42032 {eDensity} {default} 0
+4 41929 41925 {} {default} 0
+5 41930 41929 {300} {default} 0
+6 41931 41930 {0} {default} 0
+7 41932 41931 {200} {default} 0
+8 41933 41932 {200} {default} 0
+9 41934 41933 {} {default} 0
+10 41935 41934 {5.5e6} {default} 0
+11 41936 41935 {1e-8} {default} 0
+12 41937 41936 {200} {default} 0
+13 41938 41937 {200} {default} 0
+14 41939 41938 {top} {default} 0
+15 41940 41939 {} {default} 0
+16 41941 41940 {1} {default} 0
+17 41944 41941 {5} {default} 0
+18 41947 41944 {8.9E-4} {default} 0
+19 41948 41947 {} {default} 0
+20 41949 41948 {eDensity} {default} 0
+17 41959 41941 {10} {default} 0
+18 41962 41959 {8.9E-4} {default} 0
+19 41963 41962 {} {default} 0
+20 41964 41963 {eDensity} {default} 0
+17 41974 41941 {20} {default} 0
+18 41977 41974 {8.9E-4} {default} 0
+19 41978 41977 {} {default} 0
+20 41979 41978 {eDensity} {default} 0
+17 41989 41941 {30} {default} 0
+18 41992 41989 {8.9E-4} {default} 0
+19 41993 41992 {} {default} 0
+20 41994 41993 {eDensity} {default} 0
+17 42004 41941 {40} {default} 0
+18 42007 42004 {8.9E-4} {default} 0
+19 42008 42007 {} {default} 0
+20 42009 42008 {eDensity} {default} 0
+17 42019 41941 {45} {default} 0
+18 42022 42019 {8.9E-4} {default} 0
+19 42023 42022 {} {default} 0
+20 42024 42023 {eDensity} {default} 0
